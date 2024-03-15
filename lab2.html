@@ -1,32 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
 <head>
     <title>International Burch University</title>
-    
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        img {
+            width: 100px;
+            height: 25px;
+        }
+        .left-align {
+            text-align: left;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/IBU_logo_reb-02-01.png/800px-IBU_logo_reb-02-01.png" alt="IBU">
         <h3>International Burch University</h3>
         <h1>Login page</h1>
-        <div>
+        <div class="left-align">
             <p>Welcome.<br>Please Log in.</p>
             <form>
-                <label for="email">Email</label><br>
+                <b><label for="email">Email</label></b><br>
                 <input type="text" placeholder="Enter your email">
             </form>
             <form>
-                <label for="password">Password</label><br>
+                <b><label for="password">Password</label></b><br>
                 <input type="password" placeholder="Enter your password">
             </form>
         </div>
-        <p>Don't have an account? <b><a href="RegistrationPage.html">Register NOW</a></b></p>
-        <b><a href="ForgotPassPage.html">Forgot your password?</a></b><br>
+        <p>Don't have an account? <a href="registration.html">Register NOW</a></p>
+        <a href="ForgotYourPassword.html">Forgot your password?</a><br>
         <p></p>
-        <form action="Main2Page.html">
+        <form action="MainLogin.html">
             <p> </p>
             <input type="submit" value="SUBMIT">
         </form>
