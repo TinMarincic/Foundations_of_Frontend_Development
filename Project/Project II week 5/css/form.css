@@ -1,0 +1,34 @@
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button-container button {
+  width: 40%;
+}
+.button-container .btn.btn-primary.btn-block.mb-4 {
+  background-color: lightblue;
+  border-color: black;
+  color: black;
+}
+.button-container #form4Example4.form-check-input.me-2 {
+  background-color: lightblue;
+  border-color: black;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+}
+.form-container form {
+  width: 26rem;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: transparent;
+  color: #fff;
+}/*# sourceMappingURL=form.css.map */
