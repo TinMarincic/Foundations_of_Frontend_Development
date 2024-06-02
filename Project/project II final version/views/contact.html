@@ -1,0 +1,120 @@
+<div class="main-container">
+  <div class="form-c">
+    <form id="contactForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <br>
+      <label for="book-date">Book a Date:</label>
+      <input type="date" id="book_date" name="book_date" required>
+      <br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+      <br>
+      <div id="passwordStrength"></div>
+      <br>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <div class="location-container">
+    <h1>Location</h1>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2877.2023452304543!2d18.375280475668173!3d43.85163453957488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4758c9137d4f8671%3A0xceaac18b4c885c60!2sMalta%201%2C%20Sarajevo%2071000!5e0!3m2!1sen!2sba!4v1717157173297!5m2!1sen!2sba"
+      width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      class="location"></iframe>
+  </div>
+
+  <div class="Review_c">
+    <h1>Leave a Review</h1>
+    <form id="reviewForm" autocomplete="off">
+      <input type="text" id="userReview" name="userReview" placeholder="Type your review here..." required />
+      <button type="button" id="submitReview">Submit</button>
+    </form>
+    <div id="reviewsContainer"></div>
+  </div>
+
+  <script src="/JS/edit_delete.js"></script>
+
+
+  <script>
+    $(document).ready(function () {
+
+      var today = new Date().toISOString().split('T')[0];
+      $('#book_date').attr('min', today);
+
+      $('#contactForm').validate({
+        rules: {
+          name: {
+            required: true
+          },
+          email: {
+            required: true,
+            email: true
+          },
+          book_date: {
+            required: true,
+            date: true
+          },
+          password: {
+            required: true,
+            minlength: 8
+          }
+        },
+        messages: {
+          name: {
+            required: "Please enter your name."
+          },
+          email: {
+            required: "Please enter your email address.",
+            email: "Please enter a valid email address."
+          },
+          book_date: {
+            required: "Please select a date.",
+            date: "Please enter a valid date."
+          },
+          password: {
+            required: "Please enter a password.",
+            minlength: "Password must be at least 8 characters long."
+          }
+        },
+        submitHandler: function (form) {
+          toastr.success('Data saved successfully');
+          $('#contactForm')[0].reset();
+          return false;
+        }
+      });
+
+      $('#password').keyup(function () {
+        var password = $(this).val();
+        var strength = 0;
+        if (password.match(/[a-z]/) && password.match(/[A-Z]/)) {
+          strength += 1;
+        }
+        if (password.match(/[0-9]/)) {
+          strength += 1;
+        }
+        if (password.match(/[$&+,:;=?@#|'<>.^*()%!-]/)) {
+          strength += 1;
+        }
+        var strengthText = '';
+        switch (strength) {
+          case 0:
+            strengthText = 'Weak';
+            break;
+          case 1:
+            strengthText = 'Medium';
+            break;
+          case 2:
+            strengthText = 'Strong';
+            break;
+          case 3:
+            strengthText = 'Very Strong';
+            break;
+        }
+        $('#passwordStrength').html('Password Strength: ' + strengthText);
+      });
+    });
+  </script>
