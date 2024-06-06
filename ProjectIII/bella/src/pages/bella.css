@@ -1,0 +1,103 @@
+.text-box {
+    width: 100%;
+    color: #fff;
+    text-align: center;
+  
+  }
+  
+  .text-box h1 {
+    font-size: 62px;
+  }
+  
+  .text-box p {
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: white;
+  }
+  
+  .About-us-btn-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    border-radius: 3%;
+  }
+  
+  .About-us-btn-link:hover {
+    border: 1px solid lightblue;
+    background:  rgba(173, 216, 230, 0.5);
+  }
+  
+  /*Reviews section*/
+  
+  .reviews {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  h1 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .review {
+    width: calc(30% - 20px);
+    background: lightblue;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;
+  }
+  
+  .review h3 {
+    font-weight: 600;
+    margin: 10px 0;
+  }
+  
+  .review p {
+    color: #777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+  }
+  
+  .review:hover {
+    box-shadow: 0 0 20px 0px lightslategray;
+  }
+  
+  
+  /*The client images for homepage*/
+  
+  .picss {
+    text-align: center;
+  }
+  
+  .picss-row {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 20px;
+  }
+  
+  .picss-row img {
+    width: 40%; 
+    max-width: 30%;
+    margin-right: 10px;
+    height: auto;
+    object-fit: cover;
+  }
+  
